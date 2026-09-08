@@ -10,10 +10,11 @@
   <!-- Whole Page -->
   <body>
     <!-- Header -->
-    <div class="site-header flex bg-[#F5F7FA] items-center py-7.5 justify-center">
-      <img src="./src/Icon.svg" alt="Nexcent" class="pr-[166.01px]" />
+    <div class="site-header relative flex bg-[#F5F7FA] items-center justify-between md:justify-center py-5 md:py-7.5 px-4 md:px-0">
+      <img src="./src/Icon.svg" alt="Nexcent" class="md:pr-[166.01px] h-8 md:h-auto" />
 
-      <div class="site-nav flex gap-12.5">
+      <!-- Desktop nav -->
+      <div class="site-nav hidden md:flex gap-8 lg:gap-12.5">
         <a href="">Home</a>
         <a href="">Service</a>
         <a href="">Feature</a>
@@ -22,7 +23,7 @@
         <a href="">FAQ</a>
       </div>
 
-      <div class="site-auth flex gap pl-[124.5px]">
+      <div class="site-auth hidden md:flex gap pl-8 lg:pl-[124.5px]">
         <button class="text-green-600 px-3 py-1.5">Log in</button>
         <button
           class="bg-green-600 text-white px-3 py-1.5 border-black border-2 rounded-md"
@@ -30,23 +31,65 @@
           Sign Up
         </button>
       </div>
-    </div>
-    <!-- 1st Page -->
-    <div class="hero-section">
 
-      <img src="./Illustration.png" alt="" class="w-screen" />
+      <!-- Hamburger button (mobile only) -->
+      <button
+        id="menu-toggle"
+        class="md:hidden inline-flex flex-col justify-center items-center gap-1.5 w-9 h-9"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span id="bar1" class="block w-6 h-0.5 bg-slate-800 transition-transform duration-200"></span>
+        <span id="bar2" class="block w-6 h-0.5 bg-slate-800 transition-opacity duration-200"></span>
+        <span id="bar3" class="block w-6 h-0.5 bg-slate-800 transition-transform duration-200"></span>
+      </button>
+
+      <!-- Mobile menu panel -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-full left-0 w-full bg-[#F5F7FA] shadow-md flex flex-col px-6 py-4 gap-4 z-50"
+      >
+        <a href="" class="py-1">Home</a>
+        <a href="" class="py-1">Service</a>
+        <a href="" class="py-1">Feature</a>
+        <a href="" class="py-1">Product</a>
+        <a href="" class="py-1">Testimonial</a>
+        <a href="" class="py-1">FAQ</a>
+        <div class="flex gap-3 pt-2">
+          <button class="text-green-600 px-3 py-1.5 flex-1 border border-green-600 rounded-md">Log in</button>
+          <button class="bg-green-600 text-white px-3 py-1.5 border-black border-2 rounded-md flex-1">Sign Up</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1st Page -->
+    <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-8 px-6 md:px-8 lg:px-14 py-10 md:py-12 lg:py-16 text-center md:text-left">
+      <div class="max-w-md">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight text-slate-800">
+          Lessons and insights
+          <span class="block text-emerald-300">from 8 years</span>
+        </h1>
+        <p class="mt-4 text-sm text-slate-500 max-w-sm mx-auto md:mx-0">
+          Where to grow your business as a photographer: site or social media?
+        </p>
+        <button class="mt-6 inline-flex items-center rounded bg-emerald-500 hover:bg-emerald-600 transition-colors px-6 py-3 text-sm font-semibold text-white">
+          Register
+        </button>
+      </div>
+      <img src="./Illustration (1).svg" alt="" class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:w-screen" />
     </div>
 
     <!-- 2nd Page -->
-    <div class="clients-section py-10 px-37">
-      <div class="flex flex-col gap-2 items-center">
-        <h1 class="text-5xl font-bold">Our Clients</h1>
-        <p class="text-2xl font-light">
+    <div class="clients-section py-10 px-6 md:px-16 lg:px-37">
+      <div class="flex flex-col gap-2 items-center text-center">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold">Our Clients</h1>
+        <p class="text-lg sm:text-xl md:text-2xl font-light">
           We have been working with some fortune 500+ clients
         </p>
       </div>
       <!-- Images -->
-      <div class="flex justify-between py-[34.15px]">
+      <div class="flex flex-wrap justify-center md:justify-between gap-6 py-[34.15px]">
         <img src="./Logo (7).svg" alt="" />
         <img src="./Logo (6).svg" alt="" />
         <img src="./Logo (4).svg" alt="" />
@@ -58,8 +101,8 @@
     </div>
 
     <!-- 3rd Page -->
-    <div class="community-section">
-      <div class="font-bold text-4xl flex flex-col gap-2 items-center">
+    <div class="community-section px-6 text-center">
+      <div class="font-bold text-2xl sm:text-3xl md:text-4xl flex flex-col gap-2 items-center">
         <h1>Manage your entire community</h1>
         <h1>in a single system</h1>
       </div>
@@ -69,11 +112,11 @@
     </div>
 
     <!-- 4th Page -->
-    <div class="membership-grid flex px-36 justify-between">
+    <div class="membership-grid flex flex-col md:flex-row px-6 md:px-16 lg:px-36 justify-between gap-10 md:gap-6">
       <!-- 0 Part-->
-      <div class="flex flex-col px-4 py-6 justify-center items-center">
+      <div class="flex flex-col px-4 py-6 justify-center items-center text-center">
         <img src="./Icon.svg" alt="" class="w-[65px] h-[56px]" />
-        <div class="font-bold flex flex-col gap-2 tracking-wide text-3xl">
+        <div class="font-bold flex flex-col gap-2 tracking-wide text-2xl sm:text-3xl">
           <h1>Membership</h1>
           <h1>Organisations</h1>
         </div>
@@ -85,10 +128,10 @@
       </div>
 
       <!-- 1st part -->
-      <div class="flex flex-col px-4 py-6 justify-center items-center">
+      <div class="flex flex-col px-4 py-6 justify-center items-center text-center">
         <img src="./Icon(9).svg" alt="" class="w-[65px] h-[56px]" />
         <div
-          class="font-bold flex flex-col gap-2 tracking-wide text-3xl items-center"
+          class="font-bold flex flex-col gap-2 tracking-wide text-2xl sm:text-3xl items-center"
         >
           <h1>National</h1>
           <h1>Associations</h1>
@@ -102,10 +145,10 @@
       </div>
 
       <!-- 2nd Part -->
-      <div class="flex flex-col py-6 px-4 justify-center items-center">
+      <div class="flex flex-col py-6 px-4 justify-center items-center text-center">
         <img src="./Icon.svg" alt="" class="w-[65px] h-[56px]" />
         <div
-          class="font-bold flex flex-col gap-2 tracking-wide text-3xl items-center"
+          class="font-bold flex flex-col gap-2 tracking-wide text-2xl sm:text-3xl items-center"
         >
           <h1>Membership</h1>
           <h1>Organisations</h1>
@@ -119,25 +162,25 @@
     </div>
 
     <!-- 5th Page -->
-    <div class="split-section flex justify-center items-center py-[82.5px]">
+    <div class="split-section flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 py-12 md:py-[82.5px] px-6 text-center md:text-left">
       <img
         src="./frame 35.svg"
         alt=""
-        class="w-[441.53px] h-[328.99px] py-13"
+        class="w-full max-w-[300px] sm:max-w-[380px] md:w-[441.53px] h-auto md:h-[328.99px] py-6 md:py-13"
       />
       <!-- Left Content -->
       <div>
-        <div class="font-bold text-3xl tracking-wide">
+        <div class="font-bold text-2xl sm:text-3xl tracking-wide">
           <h1>The unseen of spending three</h1>
           <h1>years at pixelgrade</h1>
         </div>
-        <p class="py-8 text-gray-500">
+        <p class="py-8 text-gray-500 text-sm sm:text-base">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet
-          justo ipsum. Sed <br />
+          justo ipsum. Sed
           accumsan quam vitae est varius fringilla. Pellentesque placerat
-          vestibulum lorem sed <br />
+          vestibulum lorem sed
           porta. Nullam mattis tristique iaculis. Nullam pulvinar sit amet risus
-          pretium auctor. Etiam <br />
+          pretium auctor. Etiam
           quis massa pulvinar, aliquam quam vitae, tempus sem. Donec elementum
           pulvinar odio.
         </p>
@@ -150,11 +193,11 @@
     </div>
 
     <!-- 6th Page -->
-    <div class="stats-section bg-gray-200 py-16 flex px-36 justify-between">
+    <div class="stats-section bg-gray-200 py-12 md:py-16 flex flex-col md:flex-row px-6 md:px-16 lg:px-36 justify-between gap-10 items-center md:items-start text-center md:text-left">
       <!-- Left content -->
-      <div class="flex flex-col gap-1.5">
-        <h1 class="text-3xl font-bold">Helping a local</h1>
-        <h1 class="text-3xl font-bold text-[#4CAF4F]">
+      <div class="flex flex-col gap-1.5 items-center md:items-start">
+        <h1 class="text-2xl sm:text-3xl font-bold">Helping a local</h1>
+        <h1 class="text-2xl sm:text-3xl font-bold text-[#4CAF4F]">
           business reinvent itself
         </h1>
         <p class="text-black">
@@ -163,19 +206,19 @@
       </div>
 
       <!-- right Stuff -->
-      <div class="flex gap-15">
+      <div class="flex flex-wrap justify-center gap-10 md:gap-15">
         <!-- Middle Content -->
         <div class="flex flex-col gap-10">
-          <div class="flex">
+          <div class="flex items-center gap-3">
             <img src="./Icon(00).svg" alt="" />
-            <div class="flex-col">
+            <div class="flex-col text-left">
               <h1 class="text-2xl font-bold">2,245,341</h1>
               <h3 class="opacity-50">Members</h3>
             </div>
           </div>
-          <div class="flex">
+          <div class="flex items-center gap-3">
             <img src="./Icon (21).svg" alt="" />
-            <div class="flex-col">
+            <div class="flex-col text-left">
               <h1 class="text-2xl font-bold">828,867</h1>
               <h3 class="opacity-50">Event Bookings</h3>
             </div>
@@ -184,16 +227,16 @@
 
         <!-- Right Content -->
         <div class="flex flex-col gap-10">
-          <div class="flex">
+          <div class="flex items-center gap-3">
             <img src="./Icon (7).svg" alt="" />
-            <div class="flex-col">
+            <div class="flex-col text-left">
               <h1 class="text-2xl font-bold">46,328</h1>
               <h3 class="opacity-50">Clubs</h3>
             </div>
           </div>
-          <div class="flex">
+          <div class="flex items-center gap-3">
             <img src="./Icon (31).svg" alt="" />
-            <div class="flex-col">
+            <div class="flex-col text-left">
               <h1 class="text-2xl font-bold">1,926,436</h1>
               <h3 class="opacity-50">Payments</h3>
             </div>
@@ -203,58 +246,60 @@
     </div>
 
 <!-- 7th Page  -->
-<div class="split-section footer-design flex justify-center items-center">
-  <img src="./pana.svg" alt="">
-    <div class="flex flex-col py-[62.7px]">
+<div class="split-section footer-design flex flex-col md:flex-row justify-center items-center gap-8 px-6 py-10 text-center md:text-left">
+  <img src="./pana.svg" alt="" class="w-full max-w-[280px] sm:max-w-[360px] md:max-w-none">
+    <div class="flex flex-col py-8 md:py-[62.7px]">
         <div>
-            <h1 class="font-bold text-3xl">How to design your site footer like <br>we did</h1>
-        <p class="py-8">
-            Donec a eros justo. Fusce egestas tristique ultrices. Nam tempor, augue nec tincidunt <br>
-            molestie, massa nunc varius arcu, at scelerisque elit erat a magna. Donec quis erat at <br>
-            libero ultrices mollis. In hac habitasse platea dictumst. Vivamus vehicula leo dui, at porta <br>
-            nisi facilisis finibus. In euismod augue vitae nisi ultricies, non aliquet urna tincidunt. Integer <br>brin nisi eget nulla commodo faucibus efficitur quis massa. Praesent felis est, finibus et nisi <br>ac, hendrerit venenatis libero. Donec consectetur faucibus ipsum id gravida.
+            <h1 class="font-bold text-2xl sm:text-3xl">How to design your site footer like<br class="hidden md:block"> we did</h1>
+        <p class="py-8 text-sm sm:text-base">
+            Donec a eros justo. Fusce egestas tristique ultrices. Nam tempor, augue nec tincidunt
+            molestie, massa nunc varius arcu, at scelerisque elit erat a magna. Donec quis erat at
+            libero ultrices mollis. In hac habitasse platea dictumst. Vivamus vehicula leo dui, at porta
+            nisi facilisis finibus. In euismod augue vitae nisi ultricies, non aliquet urna tincidunt. Integer
+            nisi eget nulla commodo faucibus efficitur quis massa. Praesent felis est, finibus et nisi
+            ac, hendrerit venenatis libero. Donec consectetur faucibus ipsum id gravida.
         </p>
         </div>
-      <button class="py-4 px-8 w-[151px] h-[52px] rounded-sm bg-[#4CAF4F] text-white">Learn more</button>
+      <button class="py-4 px-8 w-[151px] h-[52px] rounded-sm bg-[#4CAF4F] text-white mx-auto md:mx-0">Learn more</button>
     </div>
 </div>
 
 <!-- 8th Page -->
- <div class="testimonial-section flex py-8.25 px-36 gap-19.5 bg-[#F5F7FA]">
-    <img src="./image 9.svg" alt="">
+ <div class="testimonial-section flex flex-col md:flex-row items-center md:items-start py-8 md:py-8.25 px-6 md:px-16 lg:px-36 gap-8 md:gap-19.5 bg-[#F5F7FA] text-center md:text-left">
+    <img src="./image 9.svg" alt="" class="w-full max-w-[240px] sm:max-w-[300px] md:max-w-none">
     <div class="flex flex-col">
-        <div class="">
-            Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus <br>tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, tristique quam in, gravida <br>enim. Nullam ut molestie arcu, at hendrerit elit. Morbi laoreet elit at ligula molestie, nec molestie <br> mi blandit. Suspendisse cursus tellus sed augue ultrices, quis tristique nulla sodales. Suspendisse <br> eget lorem eu turpis vestibulum pretium. Suspendisse potenti. Quisque malesuada enim sapien, <br> vitae placerat ante feugiat eget. Quisque vulputate odio neque, eget efficitur libero condimentum <br> id. Curabitur id nibh id sem dignissim finibus ac sit amet magna.
+        <div class="text-sm sm:text-base">
+            Maecenas dignissim justo eget nulla rutrum molestie. Maecenas lobortis sem dui, vel rutrum risus tincidunt ullamcorper. Proin eu enim metus. Vivamus sed libero ornare, tristique quam in, gravida enim. Nullam ut molestie arcu, at hendrerit elit. Morbi laoreet elit at ligula molestie, nec molestie mi blandit. Suspendisse cursus tellus sed augue ultrices, quis tristique nulla sodales. Suspendisse eget lorem eu turpis vestibulum pretium. Suspendisse potenti. Quisque malesuada enim sapien, vitae placerat ante feugiat eget. Quisque vulputate odio neque, eget efficitur libero condimentum id. Curabitur id nibh id sem dignissim finibus ac sit amet magna.
         </div>
         <div>
-            <div class="text-[#4CAF4F] font-bold text-2xl py-4">Tim Smith</div>
+            <div class="text-[#4CAF4F] font-bold text-xl sm:text-2xl py-4">Tim Smith</div>
             <div class="tracking-wide opacity-50 pb-8">British Dragon Boat Racing Association</div>
         </div>
 
         <div>
-        <img src="./Frame 14 (1).svg" alt="" class="w-[748px]">
+        <img src="./Frame 14 (1).svg" alt="" class="w-full max-w-[748px]">
         </div>
     </div>
  </div>
 
 <!-- 9th Page -->
- <div class="blog-section pt-12">
-    <h1 class="text-3xl font-bold flex flex-col items-center">Caring is the new marketing</h1>
-    <div class="flex flex-col items-center pb-5">
+ <div class="blog-section pt-12 px-6">
+    <h1 class="text-2xl sm:text-3xl font-bold flex flex-col items-center text-center">Caring is the new marketing</h1>
+    <div class="flex flex-col items-center pb-5 text-center text-sm sm:text-base">
         <h3>The Nexcent blog is the best place to read about the latest membership insights,</h3>
         <h3>trends and more. See who's joining the community, read about how our community</h3>
         <h3>are increasing their membership income and lot's more.</h3>
     </div>
-    <div class="flex px-[144px] gap-6 pb-10">
-        <img src="./1.svg" alt="">
-        <img src="./2.svg" alt="">
-        <img src="./3.svg" alt="">
+    <div class="flex flex-col sm:flex-row flex-wrap justify-center px-0 md:px-[144px] gap-6 pb-10">
+        <img src="./1.svg" alt="" class="w-full sm:w-auto">
+        <img src="./2.svg" alt="" class="w-full sm:w-auto">
+        <img src="./3.svg" alt="" class="w-full sm:w-auto">
     </div>
  </div>
 
  <!-- 10th Page -->
-<div class="cta-section bg-[#F5F7FA] flex flex-col items-center py-8">
-    <div class="font-bold text-5xl flex flex-col items-center py-8">
+<div class="cta-section bg-[#F5F7FA] flex flex-col items-center py-8 px-6 text-center">
+    <div class="font-bold text-3xl sm:text-4xl md:text-5xl flex flex-col items-center py-8">
     <h1>Pellentesque suscipit</h1>
     <h1>fringilla libero eu.</h1>
     </div>
@@ -262,13 +307,13 @@
 </div>
 
 <!-- 11th Page -->
- <div class="site-footer bg-[#263238] flex items-center py-[66.06px] px-[165px] text-white">
-<div class="flex flex-col  pb-10">
-  <div class="flex gap-[2px] pb-[42.06px]">
+ <div class="site-footer bg-[#263238] flex flex-col md:flex-row items-center md:items-start py-10 md:py-[66.06px] px-6 md:px-16 lg:px-[165px] text-white text-center md:text-left gap-10 md:gap-0">
+<div class="flex flex-col items-center md:items-start pb-10">
+  <div class="flex gap-[2px] pb-[42.06px] items-center">
    <img src="./Icon.svg" alt="">
-   <h1 class="text-4xl tracking-wider font-bold ">Nexcent</h1>
+   <h1 class="text-3xl sm:text-4xl tracking-wider font-bold ">Nexcent</h1>
   </div>
-    
+
     <p class="pb-1.5">Copyright @ 2020 Nexcent ltd.</p>
     <p class="pb-10">All rights reserved</p>
     <div class="flex gap-4">
@@ -280,7 +325,7 @@
      <div class="rounded-full bg-gray-700 w-8 h-8 flex justify-center items-center">
       <img src="./dribble.png" alt="">
      </div>
-    
+
     <!-- Twitter -->
       <div class="rounded-full bg-gray-700 w-8 h-8 flex justify-center items-center">
       <img src="./twitter.png" alt="">
@@ -293,18 +338,18 @@
     </div>
 </div>
 
-<div class="flex gap-7.5 pb-10">
-    <div class="flex flex-col pl-[284px] pr-15">
-    <a href="" class="pb-6 text-2xl">Company</a>
+<div class="flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-10 sm:gap-7.5 pb-10 w-full md:w-auto">
+    <div class="flex flex-col items-center md:items-start md:pl-[100px] lg:pl-[284px] md:pr-15">
+    <a href="" class="pb-6 text-xl sm:text-2xl">Company</a>
     <a href="" class="font-light">About us</a>
     <a href="" class="font-light">Blog</a>
     <a href="" class="font-light">Contact us</a>
-    <a href="" class="font-light">Pricing</a> 
+    <a href="" class="font-light">Pricing</a>
     <a href="" class="font-light">Testimonials</a>
 </div>
 
-<div class="flex flex-col">
-     <a href="" class="pb-6 text-2xl">Support</a>
+<div class="flex flex-col items-center md:items-start">
+     <a href="" class="pb-6 text-xl sm:text-2xl">Support</a>
      <a href="" class="font-light">Help Center</a>
      <a href="" class="font-light">Terms of Service</a>
      <a href="" class="font-light">Legal</a>
@@ -312,17 +357,51 @@
      <a href="" class="font-light">Status</a>
 </div>
 
-<div class="flex flex-col">
-    <a href="" class="text-2xl">Stay up to date</a>
-    <div class="flex gap-[87px] mb-[108px]">
+<div class="flex flex-col items-center md:items-start">
+    <a href="" class="text-xl sm:text-2xl">Stay up to date</a>
+    <div class="flex mb-6 md:mb-[108px] pt-4">
       <input type="email"
       placeholder="Your email address"
-      class="h-10 w-[255px] rounded-sm ">
+      class="h-10 w-[255px] rounded-sm px-3 text-slate-800">
     </div>
 </div>
 
 </div>
 
  </div>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const bar1 = document.getElementById('bar1');
+    const bar2 = document.getElementById('bar2');
+    const bar3 = document.getElementById('bar3');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('hidden') === false;
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+
+      if (isOpen) {
+        bar1.style.transform = 'translateY(8px) rotate(45deg)';
+        bar2.style.opacity = '0';
+        bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+      } else {
+        bar1.style.transform = '';
+        bar2.style.opacity = '1';
+        bar3.style.transform = '';
+      }
+    });
+
+    // Close the mobile menu when a link inside it is clicked
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        bar1.style.transform = '';
+        bar2.style.opacity = '1';
+        bar3.style.transform = '';
+      });
+    });
+  </script>
   </body>
 </html>
